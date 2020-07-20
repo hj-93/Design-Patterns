@@ -32,3 +32,10 @@ typedef Redoable< Undoable<Number> > ReUndoableNumber;
 int main()
 {
   ReUndoableNumber mynum;
+  mynum.set(42); mynum.set(84);
+  cout << mynum.get() << '\n';  // 84
+  mynum.undo();
+  cout << mynum.get() << '\n';  // 42
+  mynum.redo();
+  cout << mynum.get() << '\n';  // back to 84
+}
