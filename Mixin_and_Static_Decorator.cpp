@@ -63,7 +63,10 @@ struct TransparentShape : T
 int main()
 {
     TransparentShape<ColoredShape<Square>> sq1 = {50, "red", 5};
-    ColoredShape<TransparentShape<Square>> sq2 = {"red", 50, 5};
     std::cout << sq1.str() << std::endl;
+    sq1.resize(500);
+    std::cout << sq1.str() << std::endl;
+    
+    ColoredShape<TransparentShape<Square>> sq2 = {"red", 50, 5};
     std::cout << sq2.str();
 }
